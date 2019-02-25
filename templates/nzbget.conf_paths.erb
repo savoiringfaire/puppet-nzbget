@@ -1,0 +1,18 @@
+##############################################################################
+### PATHS                                                                  ###
+
+MainDir=<%= scope['::nzbget::params::main_dir'] %>
+DestDir=<%= scope['::nzbget::params::destination_dir'] %>
+InterDir=<%= scope['::nzbget::params::intermediate_dir'] %>
+NzbDir=<%= scope['::nzbget::params::nzb_dir'] %>
+QueueDir=<%= scope['::nzbget::params::queue_dir'] %>
+TempDir=<%= scope['::nzbget::params::temp_dir'] %>
+WebDir=<%= scope['::nzbget::params::web_dir'] %>
+ScriptDir=<%= scope['::nzbget::params::script_dir'].join(',') if scope['::nzbget::params::script_dir'] %>
+LockFile=<%= scope['::nzbget::params::lock_file'] %>
+LogFile=<%= scope['::nzbget::params::log_file'] %>
+ConfigTemplate=<%= scope['::nzbget::params::config_template'] %>
+RequiredDir=<%= scope['::nzbget::params::required_dir_config_mounts'].join(',') if scope['::nzbget::params::required_dir_config_mounts'] %>
+CertStore=<%= scope['::nzbget::params::cert_store'] %>
+
+

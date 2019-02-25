@@ -1,23 +1,35 @@
 {
-  "name": "savoirfaire-nzbget",
-  "version": "0.1.0",
-  "author": "Savoir Faire",
-  "summary": "",
+  "name": "nzbget",
+  "version": "1.0.0",
+  "author": "dbritton",
+  "summary": "Install and configure nzbget",
   "license": "Apache-2.0",
   "source": "",
+  "project_page": "",
+  "issues_url": "",
   "dependencies": [
-
+    {
+      "name": "puppetlabs-concat",
+      "version_requirement": "= 4.2.1"
+    },
+    {
+      "name": "pltraining-dirtree",
+      "version_requirement": "= 0.3.0"
+    },
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": "= 4.25.1"
+    },
+    {
+      "name": "puppetlabs-apt",
+      "version_requirement": "= 4.5.1"
+    }
   ],
   "operatingsystem_support": [
     {
-      "operatingsystem": "Debian",
-      "operatingsystemrelease": [
-        "8"
-      ]
-    },
-    {
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
+        "14.04",
         "16.04"
       ]
     }
@@ -25,10 +37,15 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 4.7.0 < 7.0.0"
+      "version_requirement": ">= 5.0.0"
     }
   ],
-  "pdk-version": "1.7.1",
+  "tags": [
+    "nzbget",
+    "ubuntu"
+  ],
+  "description": "Manages deployment of NZBGet on Ubuntu",
+  "pdk-version": "1.5.0",
   "template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-templates.git",
-  "template-ref": "1.7.1-0-g810b982"
+  "template-ref": "1.5.0-0-gd1b3eca"
 }

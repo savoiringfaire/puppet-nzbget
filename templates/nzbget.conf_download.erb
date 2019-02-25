@@ -1,0 +1,22 @@
+##############################################################################
+### DOWNLOAD QUEUE                                                         ###
+
+SaveQueue=<%= scope['::nzbget::save_queue'] ? 'yes' : 'no' %>
+FlushQueue=<%= scope['::nzbget::flush_queue'] ? 'yes' : 'no' %>
+ReloadQueue=<%= scope['::nzbget::reload_queue'] ? 'yes' : 'no' %>
+ContinuePartial=<%= scope['::nzbget::continue_partial'] ? 'yes' : 'no' %>
+PropagationDelay=<%= scope['::nzbget::propagation_delay'] %>
+Decode=<%= scope['::nzbget::decode'] ? 'yes' : 'no' %>
+ArticleCache=<%= scope['::nzbget::article_cache'] %>
+DirectWrite=<%= scope['::nzbget::direct_write'] ? 'yes' : 'no' %>
+WriteBuffer=<%= scope['::nzbget::write_buffer'] %>
+CrcCheck=<%= scope['::nzbget::crc_check'] ? 'yes' : 'no' %>
+FileNaming=<%= scope['::nzbget::file_naming'] %>
+ReorderFiles=<%= scope['::nzbget::reorder_files'] ? 'yes' : 'no' %>
+PostStrategy=<%= scope['::nzbget::post_strategy'] %>
+DiskSpace=<%= scope['::nzbget::disk_space'] %>
+NzbCleanupDisk=<%= scope['::nzbget::nzb_cleanup_disk'] ? 'yes' : 'no' %>
+KeepHistory=<%= scope['::nzbget::keep_history'] %>
+FeedHistory=<%= scope['::nzbget::feed_history'] %>
+
+

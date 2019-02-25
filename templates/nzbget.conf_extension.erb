@@ -1,0 +1,10 @@
+##############################################################################
+### EXTENSION SCRIPTS                                                      ###
+
+Extensions=<%= scope['::nzbget::extensions'].join(',') if scope['::nzbget::extensions'] %>
+ScriptOrder=<%= scope['::nzbget::script_order'].join(',') if scope['::nzbget::script_order'] %>
+ScriptPauseQueue=<%= scope['::nzbget::script_pause_queue'] ? 'yes' : 'no' %>
+ShellOverride=<%= scope['::nzbget::shell_override'].join(',') if scope['::nzbget::shell_override'] %>
+EventInterval=<%= scope['::nzbget::event_interval'] %>
+
+
