@@ -1,15 +1,3 @@
-# This function will apply all filters and return a unique, filtered array.
-function nzb_dir_filter(Array $dirs, Array $filters) >> Array {
-  $result = $filters.map |$filter| {
-    if ($filter == '/') {
-      $single_filter = dirtree($dirs)
-    } else {
-      $single_filter = dirtree($dirs.filter |$f| { $filter in $f }, $filter)
-    }
-  }
-  delete(unique(flatten($result)), '')
-}
-
 # == Class nzbget::params
 #
 # This class is meant to be called from nzbget.

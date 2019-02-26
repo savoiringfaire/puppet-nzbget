@@ -45,7 +45,7 @@
     "ubuntu"
   ],
   "description": "Manages deployment of NZBGet on Ubuntu",
-  "pdk-version": "1.5.0",
+  "pdk-version": "1.9.0",
   "template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-templates.git",
-  "template-ref": "1.5.0-0-gd1b3eca"
+  "template-ref": "1.9.0-0-g7281db5"
 }
