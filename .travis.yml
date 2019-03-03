@@ -5,13 +5,9 @@ cache: bundler
 before_install:
   - bundle -v
   - rm -f Gemfile.lock
-  - gem update --system $RUBYGEMS_VERSION
+  - gem update --system 
   - gem --version
   - bundle -v
-  - sudo apt-add-repository -y ppa:raphink/augeas
-  - sudo apt-get -y update
-  - sudo apt-get install -y augeas
-  - gem install augeas
 script:
   - 'bundle exec rake $CHECK'
 bundler_args: --without system_tests
