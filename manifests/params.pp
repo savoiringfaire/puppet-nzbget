@@ -18,8 +18,6 @@ class nzbget::params {
     $::nzbget::nzb_dir,
     $::nzbget::queue_dir,
     $::nzbget::temp_dir,
-    $::nzbget::cert_dir,
-    $::nzbget::secure_cert_dir,
     $::nzbget::secure_key_dir,
     $::nzbget::web_dir] +
     $::nzbget::required_dir), '')
@@ -34,8 +32,6 @@ class nzbget::params {
     $::nzbget::temp_dir,
     $::nzbget::lock_dir,
     $::nzbget::log_dir,
-    $::nzbget::cert_dir,
-    $::nzbget::secure_cert_dir,
     $::nzbget::secure_key_dir,
     $::nzbget::unpack_pass_dir,
     $::nzbget::web_dir] +
