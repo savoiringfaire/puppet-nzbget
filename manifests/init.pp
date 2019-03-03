@@ -287,7 +287,6 @@ class nzbget (
   if ($facts['os']['family'] != 'Debian') {
     fail "Your osfamily (${facts[os][family]}) is not supported by this module"
   }
-
   include ::nzbget::install
   include ::nzbget::config
   include ::nzbget::service
