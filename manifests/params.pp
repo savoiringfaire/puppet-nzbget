@@ -16,12 +16,6 @@ class nzbget::params {
     fail "nzbget::service_dir MUST be an absolute path [${::nzbget::service_dir}]."
   }
 
-  $script_dir = $::nzbget::script_dir.map |$dir| {
-    $required_abs_path = $dir
-  } else {
-    $required_dir = undef
-  }
-
   $daemon_required_mounts = delete(unique([
     $::nzbget::service_dir,
     $::nzbget::main_dir,
