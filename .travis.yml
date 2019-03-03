@@ -8,9 +8,9 @@ before_install:
   - gem update --system $RUBYGEMS_VERSION
   - gem --version
   - bundle -v
-  - sudo apt-add-repository ppa:raphink/augeas
-  - sudo apt-get update
-  - sudo apt-get install libaugeas-ruby
+  - sudo apt-add-repository -y ppa:raphink/augeas
+  - sudo apt-get -y update
+  - sudo apt-get install -y libaugeas-ruby
 script:
   - 'bundle exec rake $CHECK'
 bundler_args: --without system_tests
