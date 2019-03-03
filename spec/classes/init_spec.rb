@@ -14,8 +14,7 @@ describe 'nzbget' do
 
           it { is_expected.to compile.with_all_deps }
 
-          it { is_expected.to contain_class('nzbget').that_requires('nzbget::service') }
-          it { is_expected.to contain_class('nzbget::params') }
+          #it { is_expected.to contain_class('nzbget').that_requires('nzbget::service') }
           it { is_expected.to contain_class('nzbget::install').that_comes_before('nzbget::config') }
           it { is_expected.to contain_class('nzbget::config') }
           it { is_expected.to contain_class('nzbget::service').that_subscribes_to('nzbget::config') }

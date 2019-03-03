@@ -42,7 +42,7 @@ class nzbget (
   Optional[String]          $cert_store           = undef,
   Array[String]             $packages             = ['unrar', 'par2', 'parchive'],
   Optional[String]          $user_resource_group  = undef,
-  Array[String]             $managed_service_dirs = flatten([$service_dir, $main_dir, $script_dir]),
+  Array[String]             $managed_service_dirs = ["/test", "/test223"],
   Array[String]             $managed_data_dirs    = [$intermediate_dir, $destination_dir, $nzb_dir, $queue_dir, $temp_dir],
 
   # Servers Section
