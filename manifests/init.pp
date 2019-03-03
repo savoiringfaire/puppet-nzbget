@@ -27,14 +27,14 @@ class nzbget (
   Boolean                   $service_ensure       = true,
 
   # Paths Section
-  String                    $main_dir             = 'downloads',
-  String                    $destination_dir      = 'dst',
-  Optional[String]          $intermediate_dir     = 'inter',
-  String                    $nzb_dir              = 'nzb',
-  String                    $queue_dir            = 'queue',
-  String                    $temp_dir             = 'tmp',
+  String                    $main_dir             = "${service_dir}/downloads",
+  String                    $destination_dir      = "${service_dir}/dst",
+  Optional[String]          $intermediate_dir     = "${service_dir}/inter",
+  String                    $nzb_dir              = "${service_dir}/nzb",
+  String                    $queue_dir            = "${service_dir}/queue",
+  String                    $temp_dir             = "${service_dir}/tmp",
   Optional[String]          $web_dir              = '/usr/share/nzbget/webui',
-  Array                     $script_dir           = ['scripts'],
+  Array[String]             $script_dir           = ["${service_dir}/scripts"],
   Optional[String]          $lock_file            = "${service_dir}/nzbget.lock",
   String                    $log_file             = "${service_dir}/dst/nzbget.log",
   String                    $config_template      = '/usr/share/nzbget/nzbget.conf',
@@ -42,7 +42,7 @@ class nzbget (
   Optional[String]          $cert_store           = undef,
   Array[String]             $packages             = ['unrar', 'par2', 'parchive'],
   Optional[String]          $user_resource_group  = undef,
-  Array[String]             $managed_service_dirs = ["$service_dir", "$main_dir", "$script_dir"],
+  Array[String]             $managed_service_dirs = flatten([$service_dir, $main_dir, $script_dir]),
   Array[String]             $managed_data_dirs    = [$intermediate_dir, $destination_dir, $nzb_dir, $queue_dir, $temp_dir],
 
   # Servers Section
