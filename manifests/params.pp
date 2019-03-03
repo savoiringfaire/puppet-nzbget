@@ -12,11 +12,9 @@ class nzbget::params {
 
   $masks = [$::nzbget::manage_service_dirs[1], $::nzbget::manage_data_dirs[1]]
 
-  $::nzbget::config_file_dir = undef
   $daemon_required_mounts = delete(unique([
     $::nzbget::service_dir,
     $::nzbget::main_dir,
-    $::nzbget::config_file_dir,
     $::nzbget::nzb_dir,
     $::nzbget::queue_dir,
     $::nzbget::temp_dir,
