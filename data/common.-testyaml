@@ -22,9 +22,6 @@ nzbget::script_dir: ['scripts']
 nzbget::lock_file: 'nzbget.lock'
 nzbget::log_file: 'dst/nzbget.log'
 nzbget::config_template: '/usr/share/nzbget/nzbget.conf'
-nzbget::required_dir: undef
-nzbget::cert_store: undef
 nzbget::packages: ['unrar', 'par2', 'parchive']
-nzbget::user_resource_group: undef
 nzbget::managed_service_dirs: ["$service_dir", "$main_dir", "$script_dir"]
 nzbget::managed_data_dirs: [$intermediate_dir, $destination_dir, $nzb_dir, $queue_dir, $temp_dir]
