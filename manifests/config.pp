@@ -5,7 +5,7 @@
 
 class nzbget::config {
   if ($::nzbget::manage_service_dirs[0]) {
-    file { ${nzbget::managed_service_dirs}:
+    file { $::nzbget::managed_service_dirs:
       ensure => directory,
       owner  => $::nzbget::user,
       group  => $::nzbget::group,
@@ -14,7 +14,7 @@ class nzbget::config {
   }
 
   if ($::nzbget::manage_data_dirs[0]) {
-    file { $nzbget::managed_data_dirs:
+    file { $::nzbget::managed_data_dirs:
       ensure => directory,
       owner  => $::nzbget::user,
       group  => $::nzbget::group,
