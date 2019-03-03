@@ -4,6 +4,7 @@
 #
 
 class nzbget::install {
+  include apt
   if ($nzbget::manage_ppa) {
     apt::ppa { 'ppa:modriscoll/nzbget': }
 

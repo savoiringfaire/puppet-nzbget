@@ -35,15 +35,15 @@ class nzbget (
   String                    $temp_dir             = 'tmp',
   Optional[String]          $web_dir              = '/usr/share/nzbget/webui',
   Array                     $script_dir           = ['scripts'],
-  Optional[String]          $lock_file            = 'nzbget.lock',
-  String                    $log_file             = 'dst/nzbget.log',
+  Optional[String]          $lock_file            = "${service_dir}/nzbget.lock",
+  String                    $log_file             = "${service_dir}/dst/nzbget.log",
   String                    $config_template      = '/usr/share/nzbget/nzbget.conf',
   Optional[Array[String]]   $required_dir         = undef,
   Optional[String]          $cert_store           = undef,
   Array[String]             $packages             = ['test'],
   String                    $user_resource_group  = 'test',
-  String                    $managed_service_dirs = 'test',
-  String                    $managed_data_dirs    = 'test2',
+  String                    $managed_service_dirs = '/test',
+  String                    $managed_data_dirs    = '/test2',
 
   # Servers Section
   Optional[Array[Struct[{
