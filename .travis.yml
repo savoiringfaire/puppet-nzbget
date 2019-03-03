@@ -10,7 +10,7 @@ before_install:
   - bundle -v
   - sudo apt-add-repository -y ppa:raphink/augeas
   - sudo apt-get -y update
-  - sudo apt-get install -y libaugeas
+  - sudo apt-get install -y augeas
   - gem install augeas
 script:
   - 'bundle exec rake $CHECK'
