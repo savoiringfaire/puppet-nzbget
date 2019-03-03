@@ -1,8 +1,8 @@
 ---
 nzbget::manage_ppa: true
 nzbget::manage_user: true
-nzbget::manage_service_dirs: [true '/home']
-nzbget::manage_data_dirs: [true '/home/nzbget']
+nzbget::manage_service_dirs: [true, '/home']
+nzbget::manage_data_dirs: [true, '/home/nzbget']
 nzbget::manage_certs: true
 nzbget::manage_pass_file: true
 nzbget::user: 'nzbget'
@@ -24,7 +24,7 @@ nzbget::log_file: 'dst/nzbget.log'
 nzbget::config_template: '/usr/share/nzbget/nzbget.conf'
 nzbget::required_dir: undef
 nzbget::cert_store: undef
-nzbget::packages: ['unrar' 'par2' 'parchive']
+nzbget::packages: ['unrar', 'par2', 'parchive']
 nzbget::user_resource_group: undef
-nzbget::managed_service_dirs: ["nzbget::service_dir" "nzbget::main_dir" "nzbget::script_dir"]
-nzbget::managed_data_dirs: [nzbget::intermediate_dir nzbget::destination_dir nzbget::nzb_dir nzbget::queue_dir nzbget::temp_dir]
+nzbget::managed_service_dirs: ["$service_dir", "$main_dir", "$script_dir"]
+nzbget::managed_data_dirs: [$intermediate_dir, $destination_dir, $nzb_dir, $queue_dir, $temp_dir]
