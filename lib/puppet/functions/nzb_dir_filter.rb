@@ -5,14 +5,8 @@ Puppet::Functions.create_function(:nzb_dir_filter) do
     return_type 'Array'
   end
 
-  def nzb_dir_filter(Array dirs, Array filters)
-    $result = $filters.map |$filter| {
-      if ($filter == '/') {
-        $single_filter = dirtree($dirs)
-      } else {
-        $single_filter = dirtree($dirs.filter |$f| { $filter in $f }, $filter)
-      }
-    }
-    delete(unique(flatten($result)), '')
+  def nzb_dir_filter(dirs, filters)
+    filters.upcase
+    dirs
   end
 end
