@@ -288,7 +288,6 @@ class nzbget (
     fail "Your osfamily (${facts[os][family]}) is not supported by this module"
   }
 
-  include ::nzbget::params
   include ::nzbget::install
   include ::nzbget::config
   include ::nzbget::service
