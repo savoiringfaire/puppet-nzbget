@@ -1,0 +1,18 @@
+##############################################################################
+### LOGGING                                                                ###
+
+WriteLog=<%= scope['::nzbget::write_log'] %>
+RotateLog=<%= scope['::nzbget::rotate_log'] %>
+ErrorTarget=<%= scope['::nzbget::error_target'] %>
+WarningTarget=<%= scope['::nzbget::warning_target'] %>
+InfoTarget=<%= scope['::nzbget::info_target'] %>
+DetailTarget=<%= scope['::nzbget::detail_target'] %>
+DebugTarget=<%= scope['::nzbget::debug_target'] %>
+LogBufferSize=<%= scope['::nzbget::log_buffer_size'] %>
+NzbLog=<%= scope['::nzbget::nzb_log'] ? 'yes' : 'no' %>
+BrokenLog=<%= scope['::nzbget::broken_log'] ? 'yes' : 'no' %>
+CrashTrace=<%= scope['::nzbget::crash_trace'] ? 'yes' : 'no' %>
+CrashDump=<%= scope['::nzbget::crash_dump'] ? 'yes' : 'no' %>
+TimeCorrection=<%= scope['::nzbget::time_correction'] %>
+
+

@@ -1,0 +1,27 @@
+##############################################################################
+### NEWS-SERVERS                                                           ###
+<%- if !scope['::nzbget::servers'].nil? and scope['::nzbget::servers'].length > 0 -%>
+    <%- scope['::nzbget::servers'].each_with_index do |server, i| -%>
+        <%- server_num = i + 1 -%>
+
+# Server: <%= server['name'].to_s %> [<%= server_num %>]
+Server<%= server_num %>.Active=<%= server['active'] ? 'yes' : 'no' %>
+Server<%= server_num %>.Name=<%= server['name'].to_s %>
+Server<%= server_num %>.Level=<%= server['level'].to_i %>
+Server<%= server_num %>.Optional=<%= server['optional'] ? 'yes' : 'no' %>
+Server<%= server_num %>.Group=<%= server['group'].to_i %>
+Server<%= server_num %>.Host=<%= server['host'].to_s %>
+Server<%= server_num %>.Port=<%= server['port'].to_i %>
+Server<%= server_num %>.Username=<%= server['username'].to_s %>
+Server<%= server_num %>.Password=<%= server['password'].to_s %>
+Server<%= server_num %>.JoinGroup=<%= server['join_group'] ? 'yes' : 'no' %>
+Server<%= server_num %>.Encryption=<%= server['encryption'] ? 'yes' : 'no' %>
+Server<%= server_num %>.Cipher=<%= server['cipher'].join(':') if server['cipher'] %>
+Server<%= server_num %>.Connections=<%= server['connections'].to_i %>
+Server<%= server_num %>.Retention=<%= server['retention'].to_i %>
+Server<%= server_num %>.IpVersion=<%= server['ip_version'].to_s %>
+Server<%= server_num %>.Notes=<%= server['notes'].to_s %>
+  <%- end -%>
+<%- end -%>
+
+

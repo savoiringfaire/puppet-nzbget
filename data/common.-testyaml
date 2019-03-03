@@ -1,0 +1,27 @@
+---
+nzbget::manage_ppa: true
+nzbget::manage_user: true
+nzbget::manage_service_dirs: [true, '/home']
+nzbget::manage_data_dirs: [true, '/home/nzbget']
+nzbget::manage_certs: true
+nzbget::manage_pass_file: true
+nzbget::user: 'nzbget'
+nzbget::group: 'nzbget'
+nzbget::service_dir: '/home/nzbget'
+nzbget::config_file: '/etc/nzbget.conf'
+nzbget::service_enable: true
+nzbget::service_ensure: true
+nzbget::main_dir: 'downloads'
+nzbget::destination_dir: 'dst'
+nzbget::intermediate_dir: 'inter'
+nzbget::nzb_dir: 'nzb'
+nzbget::queue_dir: 'queue'
+nzbget::temp_dir: 'tmp'
+nzbget::web_dir: '/usr/share/nzbget/webui'
+nzbget::script_dir: ['scripts']
+nzbget::lock_file: 'nzbget.lock'
+nzbget::log_file: 'dst/nzbget.log'
+nzbget::config_template: '/usr/share/nzbget/nzbget.conf'
+nzbget::packages: ['unrar', 'par2', 'parchive']
+nzbget::managed_service_dirs: ["$service_dir", "$main_dir", "$script_dir"]
+nzbget::managed_data_dirs: [$intermediate_dir, $destination_dir, $nzb_dir, $queue_dir, $temp_dir]

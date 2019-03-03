@@ -1,0 +1,22 @@
+##############################################################################
+### SECURITY                                                               ###
+
+ControlIP=<%= scope['::nzbget::control_ip'] %>
+ControlPort=<%= scope['::nzbget::control_port'] %>
+ControlUsername=<%= scope['::nzbget::control_username'] %>
+ControlPassword=<%= scope['::nzbget::control_password'] %>
+RestrictedUsername=<%= scope['::nzbget::restricted_username'] %>
+RestrictedPassword=<%= scope['::nzbget::restricted_password'] %>
+AddUsername=<%= scope['::nzbget::add_username'] %>
+AddPassword=<%= scope['::nzbget::add_password'] %>
+FormAuth=<%= scope['::nzbget::form_auth'] ? 'yes' : 'no' %>
+SecureControl=<%= scope['::nzbget::secure_control'] ? 'yes' : 'no' %>
+SecurePort=<%= scope['::nzbget::secure_port'] %>
+SecureCert=<%= scope['::nzbget::secure_cert'] %>
+SecureKey=<%= scope['::nzbget::secure_key'] %>
+AuthorizedIP=<%= scope['::nzbget::authorized_ips'].join(',') if scope['::nzbget::authorized_ips'] %>
+CertCheck=<%= scope['::nzbget::cert_check'] ? 'yes' : 'no' %>
+DaemonUsername=<%= scope['::nzbget::daemon_username'] %>
+UMask=<%= scope['::nzbget::umask'] %>
+
+

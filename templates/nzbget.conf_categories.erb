@@ -1,0 +1,16 @@
+##############################################################################
+### CATEGORIES                                                             ###
+<%- if !scope['::nzbget::categories'].nil? and scope['::nzbget::categories'].length > 0 -%>
+    <%- scope['::nzbget::categories'].each_with_index do |category, i| -%>
+        <%- category_num = i + 1 -%>
+
+# <%= category['name'].to_s %>
+Category<%= category_num %>.Name=<%= category['name'].to_s %>
+Category<%= category_num %>.DestDir=<%= category['dest_dir'].to_s %>
+Category<%= category_num %>.Unpack=<%= category['unpack'] ? 'yes' : 'no' %>
+Category<%= category_num %>.Extensions=<%= category['extensions'].join(',') if category['extensions'] %>
+Category<%= category_num %>.Aliases=<%= category['aliases'].join(',') if category['aliases'] %>
+   <%- end -%>
+<%- end -%>
+
+
