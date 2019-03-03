@@ -40,6 +40,10 @@ class nzbget (
   String                    $config_template      = '/usr/share/nzbget/nzbget.conf',
   Optional[Array[String]]   $required_dir         = undef,
   Optional[String]          $cert_store           = undef,
+  Array[String]             $packages             = ['test'],
+  String                    $user_resource_group  = 'test',
+  String                    $managed_service_dirs = 'test',
+  String                    $managed_data_dirs    = 'test2',
 
   # Servers Section
   Optional[Array[Struct[{

@@ -1,1 +1,2 @@
 ---
+nzbget::params::packages: "deb"

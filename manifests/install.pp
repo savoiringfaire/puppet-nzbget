@@ -4,7 +4,7 @@
 #
 
 class nzbget::install {
-  if ($::nzbget::manage_ppa) {
+  if ($nzbget::manage_ppa) {
     apt::ppa { 'ppa:modriscoll/nzbget': }
 
     apt::key { 'ppa:modriscoll/nzbget':
@@ -21,7 +21,7 @@ class nzbget::install {
     }
   }
 
-  package { $::nzbget::params::packages:
+  package { $nzbget::packages:
     ensure  => latest,
     require => Class['apt::update'],
   }
@@ -34,7 +34,7 @@ class nzbget::install {
       comment    => 'NZBGet [Puppet Managed]',
       home       => $::nzbget::service_dir,
       membership => minimum,
-      groups     => $::nzbget::params::user_resource_group,
+      groups     => $::nzbget::user_resource_group,
       managehome => true,
       system     => true,
       password   => '!',
