@@ -8,7 +8,11 @@ before_install:
   - gem update --system $RUBYGEMS_VERSION
   - gem --version
   - bundle -v
-  - yum -y install ruby-augeas
+  - apt-get -y install python-software-properties
+  - apt-add-repository -y ppa:raphink/augeas
+  - apt-get -y update
+  - apt-get -y install augeas-lenses libaugeas0 augeas-tools augeas-doc \
+  - libaugeas-dev
 script:
   - 'bundle exec rake $CHECK'
 bundler_args: --without system_tests
