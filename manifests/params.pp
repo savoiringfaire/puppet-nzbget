@@ -12,10 +12,6 @@ class nzbget::params {
 
   $masks = [$::nzbget::manage_service_dirs[1], $::nzbget::manage_data_dirs[1]]
 
-  if (!is_absolute_path($::nzbget::service_dir)) {
-    fail "nzbget::service_dir MUST be an absolute path [${::nzbget::service_dir}]."
-  }
-
   $daemon_required_mounts = delete(unique([
     $::nzbget::service_dir,
     $::nzbget::main_dir,
